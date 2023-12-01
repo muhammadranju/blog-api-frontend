@@ -67,22 +67,24 @@
         <h2>Trendi Post</h2>
       </div>
       <div class="popular grid_part_3">
+        <% for(data of posts){ %>
         <div class="card">
           <div class="card_img ">
-            <a href="#">
-              <img src="../../assets/images/trendy_post.png" class="rounded" alt="Image">
+            <a href="posts/<%=data?.title_url,%>">
+              <img src="<%=data?.coverImage %> " class="rounded" alt="Image">
             </a>
             <span class="title_absolute">Travel</span>
           </div>
           <div class="card-body">
             <div class="mb_16 small_text">
-              <span>Alen Bard,</span>
+              <span><%=data?.author?.username,%></span>
               <span> 05 July 2022</span>
             </div>
-            <h5 class="card-title mb_30">One of the daily rituals I often find myself doing</h5>
-            <a href="#" class="read_more">Read more <span class="material-symbols-outlined"> arrow_right_alt </span></a>
+            <h5 class="card-title mb_30"><%=data.title%></h5>
+            <a href="posts/<%=data?.title_url,%>" class="read_more">Read more <span class="material-symbols-outlined"> arrow_right_alt </span></a>
           </div>
         </div>
+        <% } %>
       </div>
     </div>
   </div>

@@ -1,7 +1,9 @@
 const router = require("express").Router();
 
-router.route("/posts").get();
+const post = require("../../controller/post.controller");
 
-router.route("/posts/ID").get();
+router.route("/posts/:id").get(post.articlesSingleGetController);
 
-module.export = router;
+router.route("/posts").get(post.articlesGetController);
+
+module.exports = router;

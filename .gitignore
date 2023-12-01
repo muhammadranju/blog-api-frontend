@@ -4,7 +4,7 @@
 ### Node ###
 # Logs
 *.html
-src/public/assets/images
+src/public/assets/images*
 logs
 *.log
 npm-debug.log*

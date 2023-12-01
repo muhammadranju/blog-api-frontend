@@ -1,0 +1,153 @@
+<%- include('../partial/head.ejs') %>
+
+<!-- Preloader -->
+<!-- <div id="pre_loader"></div> -->
+
+<!--header-section start-->
+<%- include('../partial/header.ejs') %>
+<!-- header-section end -->
+
+<!-- Blog details Start -->
+<section class="blog_details section_padding">
+  <div class="container">
+    <div class="row ">
+      <div class="col-lg-8">
+        <div class="popup-gallery tour_contents">
+          <a href="<%= post.coverImage %>" target="_blank" class="details_top_img">
+            <img src="<%= post.coverImage %>" class="rounded" alt="Image">
+          </a>
+          <div class="mb_30 mt_30">
+            <p> John Doe • 19 Jan 2022</p>
+          </div>
+
+          <div class="details_content mt_30 mb_60">
+            <h2 class="mb_30"><%= post.title %></h2>
+            <p class="mb_20"><%= post.bodyText %></p>
+            <p class="highlighted_content mb_20">Blandit porta adipiscing velit cras blandit vitae enim rutrum donec. Enim, lobortis porttitor pulvinar pharetra. Proin nulla ut nullam purus tortor. Pellentesque a amet ultricies diam imperdiet. In phasellus euismod convallis orci odio vulputate imperdiet in enim.</p>
+            <p class="mb_20">purus vel et ultricies donec. Blandit porta adipiscing velit cras blandit vitae enim rutrum donec. Enim, lobortis porttitor pulvinar pharetra. Proin nulla ut nullam purus tortor. Pellentesque a amet ultricies diam imperdiet. In phasellus euismod convallis orci odio vulputate imperdiet in enim.</p>
+            <div class="img_content between_part">
+              <img src="../../assets/images/blog_details_content.png" alt="Image">
+              <p>purus vel et ultricies donec. Blandit porta adipiscing velit cras blandit vitae enim rutrum donec. Enim, lobortis porttitor pulvinar pharetra. Proin nulla ut nullam purus tortor. Pellentesque a amet ultricies diam imperdiet. In phasellus euismod convallis orci odio vulputate imperdiet in enim.</p>
+            </div>
+            <p class="mt_30">purus vel et ultricies donec. Blandit porta adipiscing velit cras blandit vitae enim rutrum donec. Enim, lobortis porttitor pulvinar pharetra. Proin nulla ut nullam purus tortor. Pellentesque a amet ultricies diam imperdiet. In phasellus euismod convallis orci odio vulputate imperdiet in enim.</p>
+          </div>
+          <div class="comment_counts between_part mb_60">
+            <img src="../../assets/images/comment_counts.png" alt="Icon">
+            <span>2 Comments</span>
+          </div>
+
+          <form method="POST" autocomplete="off" id="frmComments" class="comments_form mb_60">
+            <div class="in-box gap0">
+              <input type="text" class="form-control" id="comments" name="comments" placeholder="Write A Comment">
+              <button type="submit" class="btn_theme x_large font_400" name="comments_submit" id="comments_submit">Submit</button>
+            </div>
+            <span id="commentsMsg"></span>
+          </form>
+
+          <div class="comments_area">
+            <div class="single_comments mt_30">
+              <div class="gap30">
+                <div class="author_img">
+                  <img src="../../assets/images/clients_comments.png" alt="image">
+                </div>
+                <div class="author_content">
+                  <div class="between_part gap10 mb_20">
+                    <h5 class="author_name">Melina</h5>
+                    <span>05 day ago</span>
+                  </div>
+                  <p>A mi gravida diam libero. In turpis arcu tempus magna leo ipsum tortor sed viverra. Leo, egestas eget leo nec. In duis cursus proin malesuada quisque. In in etiam tempus convallis. </p>
+                  <div class="reply">
+                    <a href="#" class="active">Reply</a>
+                    <span class="bullet">&bull; </span>
+                    <span> Share <img src="../../assets/images/reply_img.png" alt="Image"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="single_comments mt_30">
+              <div class="gap30">
+                <div class="author_img">
+                  <img src="../../assets/images/clients_comments.png" alt="image">
+                </div>
+                <div class="author_content">
+                  <div class="between_part gap10 mb_20">
+                    <h5 class="author_name">Alex po</h5>
+                    <span>05 day ago</span>
+                  </div>
+                  <p>A mi gravida diam libero. In turpis arcu tempus magna leo ipsum tortor sed viverra. Leo, egestas eget leo nec. In duis cursus proin malesuada quisque. In in etiam tempus convallis. </p>
+                  <div class="reply">
+                    <a href="#" class="active">Reply</a>
+                    <span class="bullet">&bull; </span>
+                    <span> Share <img src="../../assets/images/reply_img.png" alt="Image"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="side_bar part_md_pt">
+          <form method="POST" autocomplete="off" id="search" class="search_box mb_20">
+            <div class="in-box between_two_part">
+              <input type="text" class="form-control" placeholder="Search">
+              <button type="submit" class="search_icon"> <i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+          </form>
+          <div class="post_category mb_40">
+            <h4 class="mb_30">Post Category</h4>
+            <p class="category_list">Travel</p>
+            <p class="category_list">Design</p>
+            <p class="category_list">Fitness</p>
+            <p class="category_list">Tecnology</p>
+          </div>
+          <div class="latest_post">
+            <h4 class="mb_30">Latest Post</h4>
+            <div class="part mb_30">
+              <div class="gap30">
+                <img src="../../assets/images/latest_post.png" alt="Image">
+                <div class="content">
+                  <p class="mb_10 post_content">The Bears will have edge rusher Ledarius Mack up</p>
+                  <div class="between_part name small_text">
+                    <span class="material-symbols-outlined"> alarm_on </span>
+                    21 JUN, 2022
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="part mb_30">
+              <div class="gap30">
+                <img src="../../assets/images/latest_post2.png" alt="Image">
+                <div class="content">
+                  <p class="mb_10 post_content">Myself in the world of travel where anything is possible.</p>
+                  <div class="between_part name small_text">
+                    <span class="material-symbols-outlined"> alarm_on </span>
+                    21 JUN, 2022
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="part">
+              <div class="gap30">
+                <img src="../../assets/images/latest_post3.png" alt="Image">
+                <div class="content">
+                  <p class="mb_10 post_content">Myself in the world of travel where anything is possible.</p>
+                  <div class="between_part name small_text">
+                    <span class="material-symbols-outlined"> alarm_on </span>
+                    21 JUN, 2022
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog Details End -->
+
+
+<!-- Footer Area Start -->
+<%- include('../partial/footer.ejs') %>
+<!-- Footer Area End -->
