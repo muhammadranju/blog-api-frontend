@@ -35,7 +35,7 @@
           </div> -->
         <div class="container">
           <div class="row align-items-center">
-            <h1 class="mb_30 ">The Blog Expert
+            <h1 class="mt_30 ">The Blog Expert
             </h1>
             <div class="col-lg-12 ">
               <h5 class=" text-secondary">BlogApp is a technology website that provides the latest news and reviews on the latest technology trends and gadgets. The website covers a wide range of topics including smartphones, laptops, gaming, smart home devices, and more.</h5>
@@ -67,23 +67,25 @@
         <h2>Trendi Post</h2>
       </div>
       <div class="popular grid_part_3">
+        <% if(posts){ %>
         <% for(data of posts){ %>
         <div class="card">
           <div class="card_img ">
-            <a href="posts/<%=data?.title_url,%>">
-              <img src="<%=data?.coverImage %> " class="rounded" alt="Image">
+            <a href="/posts/<%=data?.title_url%>">
+              <img src="<%=data?.cover %> " class="rounded" width="100px" alt="<%=data?.title_url%>">
             </a>
-            <span class="title_absolute">Travel</span>
+            <span class="title_absolute"><%=data.tags[0].toUpperCase() %></span>
           </div>
           <div class="card-body">
             <div class="mb_16 small_text">
-              <span><%=data?.author?.username,%></span>
+              <span><%=data?.author?.username%></span>
               <span> 05 July 2022</span>
             </div>
-            <h5 class="card-title mb_30"><%=data.title%></h5>
-            <a href="posts/<%=data?.title_url,%>" class="read_more">Read more <span class="material-symbols-outlined"> arrow_right_alt </span></a>
+            <span class="card-title mb_30"><%=data.title?.slice(0,50)?.concat("...")%></span>
+
           </div>
         </div>
+        <% } %>
         <% } %>
       </div>
     </div>
@@ -118,20 +120,24 @@
       </div>
       <div class="col-lg-8">
         <div class="article_area ">
+          <% if(posts){ %>
+          <% for(data of posts){ %>
           <div class="part between_part">
-            <a href="#">
-
-              <img src="../../assets/images/recent_articles.png" class="rounded" alt="Image">
+            <a href="/posts/<%=data?.title_url %>">
+              <img src="<%=data?.cover %>" class="rounded" width="350px" alt="Image">
             </a>
             <div class="text_area">
               <p class="top_part xsmall_text align_gap10 mb_20">
                 <span class="material-symbols-outlined"> alarm </span>
                 <span>21 JUN, 2022</span>
               </p>
-              <h5 class="mb_20">All cardiologists study the disorders of the heart, but the study, </h5>
-              <p>Lorem ipsum dolor sit at more amet, consectetur adipiscing elit. The Odio massa dignissim facilisis.</p>
+              <h5 class="mb_20"><%=data?.title?.slice(0,40)?.concat("...") %></h5>
+              <p><%=data?.bodyText?.slice(0,80)?.concat("...") %></p>
             </div>
           </div>
+          <% } %>
+          <% } %>
+
         </div>
       </div>
       <div class="col-lg-4 part_md_pt">
