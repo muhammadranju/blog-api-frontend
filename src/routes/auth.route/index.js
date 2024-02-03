@@ -1,9 +1,14 @@
 const router = require("express").Router();
 
-router.route("/user/login").get();
+const {
+  loginGetController,
+  singupGetController,
+} = require("../../controller/auth.controller");
+
+router.route("/user/login").get(loginGetController);
 router.route("/user/login").post();
 
-router.route("/user/signup").get();
+router.route("/user/signup").get(singupGetController);
 router.route("/user/singup").post();
 
 router.route("/user/forgot-password").get();
