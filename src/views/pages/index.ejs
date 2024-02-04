@@ -59,12 +59,12 @@
 </section>
 <!-- Blog Banner Section End -->
 
-<!-- Trendi Post Section Start -->
+<!-- Trending Post Section Start -->
 <section class="featured_post_section  section_padding">
   <div class="container">
     <div class="row ">
       <div class="title_area mb_60">
-        <h2>Trendi Post</h2>
+        <h2>Trending Post</h2>
       </div>
       <div class="popular grid_part_3">
         <% if(posts){ %>
@@ -74,15 +74,14 @@
             <a href="/posts/<%=data?.title_url%>">
               <img src="<%=data?.cover %> " class="rounded" width="100px" alt="<%=data?.title_url%>">
             </a>
-            <span class="title_absolute"><%=data.tags[0].toUpperCase() %></span>
+            <span class="title_absolute"><%=data?.tags[0]?.toUpperCase() %></span>
           </div>
           <div class="card-body">
             <div class="mb_16 small_text">
               <span><%=data?.author?.username%></span>
               <span> 05 July 2022</span>
             </div>
-            <span class="card-title mb_30"><%=data.title?.slice(0,50)?.concat("...")%></span>
-
+            <span class="card-title mb_30"><%=data?.title.length!==40?data?.title?.slice(0,35)?.concat("..."):data?.title%></span>
           </div>
         </div>
         <% } %>
@@ -91,7 +90,7 @@
     </div>
   </div>
 </section>
-<!-- Trendi Post Section End -->
+<!-- Trending Post Section End -->
 
 <!-- business of influence Section Start -->
 <section class="business_influence">
@@ -131,8 +130,8 @@
                 <span class="material-symbols-outlined"> alarm </span>
                 <span>21 JUN, 2022</span>
               </p>
-              <h5 class="mb_20"><%=data?.title?.slice(0,40)?.concat("...") %></h5>
-              <p><%=data?.bodyText?.slice(0,80)?.concat("...") %></p>
+              <h5 class="mb_20"><%=data?.title.length!==40?data?.title?.slice(0,35)?.concat("..."):data?.title %></h5>
+              <p><%=data?.bodyText.length!==80?data?.bodyText.slice(0,80)?.concat("..."):data?.bodyText %></p>
             </div>
           </div>
           <% } %>
