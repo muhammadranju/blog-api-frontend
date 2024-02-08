@@ -8,7 +8,7 @@
 <!-- header-section end -->
 
 <!-- Section: Design Block -->
-<section class="mt-10">
+<section class="mt-5">
   <!-- Jumbotron -->
   <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
     <div class="container">
@@ -29,7 +29,7 @@
         <div class="col-lg-6 mb-5 mb-lg-0">
           <div class="card">
             <div class="card-body py-5 px-md-5">
-              <form class="">
+              <form action="/user/login" method="POST">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row">
                   <!-- Email input -->
@@ -62,7 +62,7 @@
 
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">
-                  Sign up
+                  Login
                 </button>
 
                 <!-- Register buttons -->
@@ -98,3 +98,7 @@
 <!-- Footer Area Start -->
 <%- include('../../partial/footer.ejs') %>
 <!-- Footer Area End -->
+<script>
+  const username = document.getElementById('username')
+  console.log(username.value);
+</script>
