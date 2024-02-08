@@ -2,11 +2,13 @@ const router = require("express").Router();
 
 const {
   loginGetController,
+  loginPostController,
   singupGetController,
 } = require("../../controller/auth.controller");
 
 router.route("/user/login").get(loginGetController);
-router.route("/user/login").post();
+router.post("/user/login", loginPostController);
+// router.route("/user/login").post(loginPostController);
 
 router.route("/user/signup").get(singupGetController);
 router.route("/user/singup").post();
